@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="101" tileheight="81" infinite="0" nextlayerid="5" nextobjectid="1">
+ <tileset firstgid="1" name="Untitled" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
+  <image source="res/ortho-test1.png" width="1024" height="1024"/>
+ </tileset>
+ <tileset firstgid="46" name="tileset2" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
+  <image source="res/ortho-test1_bw.png" width="1024" height="1024"/>
+ </tileset>
+ <layer id="1" name="Layer 0" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgGAX4AB8Q8wOxAJSvRIJeZiBmAmIWIGYFYjYS9AoBsTAQawCxKhCrQMVVkbAgEGsDsQQQiwCxKFQ9F4nqKTEfAM9UTSZAAgAA
+  </data>
+ </layer>
+ <layer id="2" name="Layer 1" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgGAXUBNZAbAPEtmToNQBifSA2BGIjIDYmQa89GfbhMgcd4wMA7a2boEACAAA=
+  </data>
+ </layer>
+ <layer id="3" name="Layer 2" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgGAUDCfiAmB+IBcjQywzETEDMAsSsQMxGgl4hMuzDBgAgyUssQAIAAA==
+  </data>
+ </layer>
+ <layer id="4" name="Layer 3" width="12" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACmNgGAUjDfCi0ZQAAPnIsIVAAgAA
+  </data>
+ </layer>
+</map>
