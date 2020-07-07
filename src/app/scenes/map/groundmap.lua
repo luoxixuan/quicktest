@@ -4,7 +4,7 @@ end)
 
 local kTagTileMap = 1
 --限制一下Y轴的移动
-local limitY = 10
+local limitY = 1
 local function createTileLayer(title, subtitle)
     local layer = cc.LayerColor:create(cc.c4b(255,255,255,255))
 
