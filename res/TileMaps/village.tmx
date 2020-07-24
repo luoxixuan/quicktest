@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="101" tileheight="81" infinite="0" nextlayerid="5" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.1" orientation="orthogonal" renderorder="right-down" width="12" height="12" tilewidth="101" tileheight="81" infinite="0" nextlayerid="7" nextobjectid="16">
  <tileset firstgid="1" name="Untitled" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
   <image source="res/ortho-test1.png" width="1024" height="1024"/>
  </tileset>
  <tileset firstgid="46" name="tileset2" tilewidth="101" tileheight="171" spacing="2" margin="2" tilecount="45" columns="9">
   <image source="res/ortho-test1_bw.png" width="1024" height="1024"/>
  </tileset>
- <layer id="1" name="Layer 0" width="12" height="12">
+ <layer id="1" name="tileLayer" width="12" height="12" locked="1">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgGAX4AB8Q8wOxAJSvRIJeZiBmAmIWIGYFYjYS9AoBsTAQawCxKhCrQMVVkbAgEGsDsQQQiwCxKFQ9F4nqKTEfAM9UTSZAAgAA
+   H4sIAAAAAAAACtNmYGDQBmIuKFbFgXWhWJsM9VoUqBeEYkLu0UZTj64Hm3otGqpHdz8p6kkJf5jZIjRUj889AKPcPstAAgAA
   </data>
  </layer>
- <layer id="2" name="Layer 1" width="12" height="12">
+ <layer id="2" name="objLayer" width="12" height="12" locked="1">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgGAXUBNZAbAPEtmToNQBifSA2BGIjIDYmQa89GfbhMgcd4wMA7a2boEACAAA=
+   H4sIAAAAAAAACmNggABJBuwAJK4MxOxALIBDDbp6YtSh66EW0ECjiQHqVLQfF1CjsnmwMCPF7eSEM7r5wmh8AFipvyhAAgAA
   </data>
  </layer>
- <layer id="3" name="Layer 2" width="12" height="12">
+ <layer id="3" name="roleLayer" width="12" height="12" locked="1">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgGAUDCfiAmB+IBcjQywzETEDMAsSsQMxGgl4hMuzDBgAgyUssQAIAAA==
+   H4sIAAAAAAAACmNgwA70cYiDABMeORgwRlPPCsQsRJhNLDCkslpy3URInxWZ5iIDAzLtxgWQ3WSMUxVxAABj7Ub4QAIAAA==
   </data>
  </layer>
- <layer id="4" name="Layer 3" width="12" height="12">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAACmNgGAUjDfCi0ZQAAPnIsIVAAgAA
-  </data>
- </layer>
+ <objectgroup id="5" name="blockLayer">
+  <properties>
+   <property name="block" type="bool" value="true"/>
+  </properties>
+  <object id="13" name="rock3" gid="25" x="504" y="686" width="101" height="171"/>
+  <object id="14" name="rock2" gid="25" x="604" y="766" width="101" height="171"/>
+  <object id="15" name="rock1" gid="25" x="710" y="692" width="101" height="171"/>
+ </objectgroup>
 </map>

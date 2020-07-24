@@ -73,10 +73,11 @@ function groudmap:onTouchesMoved(touches, event )
     end
     --边界检测
     local destX,destY = currentPosX + diff.x, currentPosY + diff.y
+    local minX,minY = display.width-currentSize.width,display.height-currentSize.height
     destX = math.min(destX,0)
-    destX = math.max(destX,-currentSize.width)
+    destX = math.max(destX,minX)
     destY = math.min(destY,0)
-    destY = math.max(destY,-currentSize.height)
+    destY = math.max(destY,minY)
     --设置坐标
     node:setPosition(cc.p(destX, destY))
 end

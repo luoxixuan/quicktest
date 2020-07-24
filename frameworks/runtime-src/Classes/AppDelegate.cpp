@@ -95,7 +95,11 @@ bool AppDelegate::applicationDidFinishLaunching()
     auto glview = director->getOpenGLView();    
     if(!glview) {
         string title = "quicktest";
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32 || CC_TARGET_PLATFORM == CC_PLATFORM_MAC)
+		glview = cocos2d::GLViewImpl::createWithRect(title.c_str(), Rect(0,0, 1280, 720));
+#else
         glview = cocos2d::GLViewImpl::create(title.c_str());
+#endif
         director->setOpenGLView(glview);
         director->startAnimation();
     }
