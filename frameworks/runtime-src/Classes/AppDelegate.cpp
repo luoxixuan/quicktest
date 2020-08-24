@@ -114,7 +114,7 @@ bool AppDelegate::applicationDidFinishLaunching()
     
     // resource decode, include game.zip
     //FileUtils::getInstance()->setFileDataDecoder(decoder);
-#if 0
+#ifndef COCOS2D_DEBUG
     LuaStack* stack = engine->getLuaStack();
     // use luajit bytecode package
 #if defined(__aarch64__) || defined(__arm64__)
