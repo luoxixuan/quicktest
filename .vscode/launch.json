@@ -13,7 +13,8 @@
             "mainFile": "src/main.lua",
             "commandLine": [
                 "-workdir ${workspaceRoot}",
-                "-file src/main.lua"
+                "-file src/main.lua",
+                "-remote-debug"
             ],
             "port": 7003,
             "exePath": "${workspaceRoot}/frameworks/runtime-src/proj.win32/Debug.win32/quicktest.exe",

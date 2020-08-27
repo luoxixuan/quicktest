@@ -16,6 +16,8 @@
 USING_NS_CC;
 using namespace std;
 
+AppDelegate* AppDelegate::s_shareAppdelegate = nullptr;
+
 static void quick_module_register(lua_State *L)
 {
     luaopen_lua_extensions_more(L);
@@ -36,10 +38,21 @@ static void quick_module_register(lua_State *L)
 //
 AppDelegate::AppDelegate()
 {
+	s_shareAppdelegate = this;
 }
 
 AppDelegate::~AppDelegate()
 {
+	if (this == s_shareAppdelegate)
+	{
+		s_shareAppdelegate = nullptr;
+	}
+}
+
+//
+AppDelegate* AppDelegate::getInstance()
+{
+	return s_shareAppdelegate;
 }
 
 //if you want a different context,just modify the value of glContextAttrs
@@ -125,6 +138,8 @@ bool AppDelegate::applicationDidFinishLaunching()
     stack->executeString("require 'main'");
 #else // #if 0
     // use discrete files
+	LuaStack* stack = engine->getLuaStack();
+	stack->executeString("REMOTE_DEBUG = true");
     engine->executeScriptFile("src/main.lua");
 #endif
 
@@ -147,4 +162,9 @@ void AppDelegate::applicationWillEnterForeground()
     Director::getInstance()->startAnimation();
 
     Director::getInstance()->getEventDispatcher()->dispatchCustomEvent("APP_ENTER_FOREGROUND_EVENT");
+}
+
+void AppDelegate::setProjectConfig(ProjectConfig config)
+{
+	_projectConfig = config;
 }

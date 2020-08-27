@@ -1,7 +1,10 @@
 package.path = package.path .. ";src/?.lua;src/framework/protobuf/?.lua"
 
-local breakInfoFun,xpcallFun = require("LuaDebug")("localhost", 7003)
-cc.Director:getInstance():getScheduler():scheduleScriptFunc(breakInfoFun, 0.3, false)
+print("REMOTE_DEBUG", REMOTE_DEBUG)
+if REMOTE_DEBUG then
+    local breakInfoFun,xpcallFun = require("LuaDebug")("localhost", 7003)
+    cc.Director:getInstance():getScheduler():scheduleScriptFunc(breakInfoFun, 0.3, false)
+end
 
 function __G__TRACKBACK__(errorMessage)
     xpcallFun()

@@ -2,6 +2,7 @@
 #define __APP_DELEGATE_H__
 
 #include "cocos2d.h"
+#include "ProjectConfig/ProjectConfig.h"
 
 /**
 @brief    The cocos2d Application.
@@ -34,6 +35,14 @@ public:
     @param  the pointer of the application
     */
     virtual void applicationWillEnterForeground();
+
+	AppDelegate* getInstance();
+
+	void setProjectConfig(ProjectConfig config);
+
+private:
+	static AppDelegate* s_shareAppdelegate;
+	ProjectConfig _projectConfig;
 };
 
 #endif  // __APP_DELEGATE_H__

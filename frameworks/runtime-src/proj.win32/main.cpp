@@ -62,10 +62,27 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
 	// set environments for debug mode
 	string projectDir = project.getProjectDir();
+	auto utils = FileUtils::getInstance();
 	if (projectDir.empty()) {
 		projectDir = "../../..";
-		project.setProjectDir(projectDir);
+        if (utils->isDirectoryExist(projectDir + "/res"))
+        {
+			project.setProjectDir(projectDir);
+        }
+		else  //考虑到还有打包出来的情况
+		{
+			char dirBuf[256] = "";
+			projectDir = GetCurrentDirectoryA(256, dirBuf);
+			projectDir = dirBuf;
+			if (utils->isDirectoryExist(projectDir + "/res"))
+			{
+				project.setProjectDir(projectDir);
+			}
+		}
+        
 	}
+    SetCurrentDirectoryA(projectDir.c_str());
+	FileUtils::getInstance()->setSearchRootPath(projectDir.c_str());
 	FileUtils::getInstance()->addSearchPath(projectDir);
 	FileUtils::getInstance()->addSearchPath(projectDir + "/res");
 
@@ -93,6 +110,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 
     // create the application instance
     AppDelegate app;
+	app.setProjectConfig(project);
     int ret = Application::getInstance()->run();
 
 #ifdef USE_WIN32_CONSOLE

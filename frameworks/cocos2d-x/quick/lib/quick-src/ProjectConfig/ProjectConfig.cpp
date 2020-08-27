@@ -58,6 +58,7 @@ void ProjectConfig::resetToWelcome()
     _isAppMenu = false;
     _isResizeWindow = false;
     _isRetinaDisplay = true;
+	_isRemoteDebug = false;
 }
 
 void ProjectConfig::resetToCreator()
@@ -78,6 +79,7 @@ void ProjectConfig::resetToCreator()
     _isAppMenu = true;
     _isResizeWindow = true;
     _isRetinaDisplay = true;
+	_isRemoteDebug = false;
 }
 
 string ProjectConfig::getProjectDir() const
@@ -403,6 +405,10 @@ void ProjectConfig::parseCommandLine(const vector<string> &args)
         {
             _isRetinaDisplay = true;
         }
+		else if (arg.compare("-remote-debug") == 0)
+		{
+			_isRemoteDebug = true;
+		}
 
         ++it;
     }

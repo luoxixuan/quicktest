@@ -117,6 +117,7 @@ private:
     bool _isAppMenu;
     bool _isResizeWindow;
     bool _isRetinaDisplay;
+	bool _isRemoteDebug;
 
     void normalize();
     string replaceProjectDirToMacro(const string &path) const;
